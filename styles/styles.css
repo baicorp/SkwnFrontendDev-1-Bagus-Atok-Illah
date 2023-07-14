@@ -1,0 +1,906 @@
+:root {
+  font-size: 62.5%;
+  --primary-color: #2f241f;
+  --accent-color: #e5f0b6;
+  --accent-color-50: rgba(229, 240, 182, 0.5);
+  --text-xs: 1.2rem;
+  --text-sm: 1.4rem;
+  --text-md: 1.6rem;
+  --text-lg: 2.4rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-VariableFont.woff2") format("woff2");
+  font-display: swap;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  max-width: 1240px;
+  font-weight: 500;
+}
+
+.logo {
+  width: 107px;
+}
+
+.menu {
+  display: none;
+}
+
+.menu__item {
+  padding: 8px;
+  font-size: var(--text-md);
+}
+
+.menu__item--drop {
+  display: flex;
+  gap: 8px;
+}
+
+.hamburger-menu {
+  width: 24px;
+  height: 24px;
+}
+
+.action {
+  display: none;
+}
+
+.action__sign-up {
+  padding: 12px 24px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  background-color: var(--accent-color);
+}
+
+.action__store {
+  padding: 12px;
+  background-color: var(--primary-color);
+}
+
+.action__store img {
+  width: 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .nav {
+    margin: 46px auto;
+  }
+
+  .logo {
+    width: 161px;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .action {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+/* hero section */
+.hero-container {
+  position: relative;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  color: var(--primary-color);
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+}
+
+.hero__title h1 {
+  font-size: 3.2rem;
+  padding: 28px 16px 24px 16px;
+}
+
+.hero__title h1 span {
+  color: var(--accent-color);
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 282px;
+}
+
+.btn {
+  display: flex;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0;
+  flex-grow: 1;
+}
+
+.btn p {
+  font-size: var(--text-sm);
+}
+
+.btn--accent {
+  background-color: var(--accent-color);
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+}
+
+.btn--outlined {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+
+.hero__picture {
+  padding: 16px 24px;
+  min-height: 229px;
+  max-height: 1024px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.highlited {
+  font-size: var(--text-xs);
+  color: white;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product__price {
+  width: fit-content;
+  padding: 8px 16px;
+  font-size: var(--text-sm);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.product__name {
+  font-size: var(--text-lg);
+}
+
+.product__btn {
+  font-size: var(--text-xs);
+  width: fit-content;
+  color: white;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.product__btn svg {
+  width: 12px;
+}
+
+.hero__img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-image: url("../images/sofa-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 229px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+    max-width: 1156px;
+    margin: 0 auto;
+  }
+
+  .hero__title {
+    text-align: left;
+    max-width: 712px;
+  }
+
+  .hero__title h1 {
+    padding: 48px 0;
+    font-size: 72px;
+    line-height: 87.14px;
+    font-weight: 800;
+  }
+
+  .btn-container {
+    width: inherit;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .btn {
+    padding: 22px 0;
+    width: 344px;
+  }
+
+  .btn p {
+    font-size: var(--text-lg);
+  }
+
+  .hero__picture {
+    padding: 87px 0 87px 48px;
+    min-height: 709px;
+  }
+
+  .highlited {
+    visibility: hidden;
+  }
+
+  .product__price {
+    font-size: var(--text-lg);
+  }
+
+  .product__name {
+    color: white;
+    letter-spacing: -2px;
+    font-size: 64px;
+  }
+
+  .product__btn {
+    gap: 16px;
+    padding: 16px 24px;
+    font-size: var(--text-md);
+  }
+
+  .hero__img {
+    background: url("../images/sofa-desktop.png");
+    width: 522px;
+    height: 709px;
+    left: auto;
+    background-position: cover;
+  }
+}
+
+/* banner section*/
+
+.section-banner {
+  background-color: var(--primary-color);
+}
+
+.banner {
+  color: var(--accent-color);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.banner p {
+  font-size: var(--text-sm);
+}
+
+.banner h2 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin: 24px 0 32px 0;
+  letter-spacing: -1px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-item {
+  display: flex;
+  text-align: start;
+  align-items: center;
+  gap: 16px;
+}
+
+.feature-item__badge {
+  background-color: var(--accent-color-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.feature-item p {
+  font-size: 15px;
+  font-weight: 700px;
+  line-height: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .banner {
+    max-width: 1156px;
+    padding: 72px 0;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .banner p {
+    font-size: var(--text-lg);
+  }
+
+  .banner h2 {
+    font-size: 64px;
+    margin: 40px 0;
+  }
+
+  .feature {
+    flex-direction: row;
+    gap: 60px;
+    justify-content: space-between;
+  }
+
+  .feature-item p {
+    line-height: 36px;
+  }
+}
+
+/* company section */
+.section-company {
+  background: #fcfafa;
+}
+
+.company {
+  padding: 24px 24px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.company__number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.company__number p {
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.company__number span {
+  font-size: var(--text-sm);
+}
+
+.company__container {
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.company__container img {
+  background-size: contain;
+}
+
+@media only screen and (min-width: 768px) {
+  .company {
+    padding: 80px 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1156px;
+    margin: 0 auto;
+  }
+
+  .company__number {
+    align-items: start;
+  }
+
+  .company__number p {
+    font-size: 96px;
+  }
+
+  .company__number span {
+    font-size: var(--text-lg);
+  }
+
+  .company__container {
+    height: 52px;
+    gap: 88.64px;
+  }
+}
+
+/* Categories section */
+.category-section {
+  position: relative;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 24px;
+  color: var(--primary-color);
+}
+
+.category-img {
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.category-img img {
+  width: 103px;
+  border-radius: 12px;
+}
+
+.category-text {
+  padding: 24px 35px;
+  text-align: center;
+}
+
+.category-text p {
+  font-size: var(--text-sm);
+}
+
+.category-text h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 28px;
+  margin: 8px 0 24px 0;
+}
+
+.category-list {
+  background-color: #fcfafa;
+}
+
+.category-item {
+  text-align: left;
+  padding: 20px 16px;
+}
+
+.category-item h3 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.category-item p {
+  margin-top: 12px;
+  font-size: var(--text-sm);
+  line-height: 20px;
+}
+
+.desc {
+  background: var(--accent-color);
+}
+
+@media only screen and (min-width: 768px) {
+  .category-container {
+    max-width: 1156px;
+    margin: 80px auto;
+    padding: 0;
+    flex-direction: row;
+    gap: auto;
+    justify-content: space-between;
+  }
+
+  .category-img {
+    position: relative;
+    left: -100px;
+    width: 816px;
+  }
+
+  .category-img img:nth-child(1),
+  .category-img img:nth-child(2) {
+    object-fit: cover;
+    width: auto;
+    flex: 2;
+  }
+  .category-img img:last-child {
+    object-fit: cover;
+    width: auto;
+    flex: 5;
+    border-radius: 12px;
+  }
+
+  .category-text {
+    max-width: 434px;
+    text-align: left;
+  }
+
+  .category-text p {
+    font-size: var(--text-lg);
+  }
+
+  .category-text h2 {
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 58.09px;
+    margin: 32px 0;
+  }
+
+  .category-list {
+    background-color: #fcfafa;
+  }
+
+  .category-item p {
+    font-size: var(--text-sm);
+  }
+}
+
+/* product section */
+.product-section {
+  background: var(--primary-color);
+}
+
+.product-header {
+  color: var(--accent-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 16px 24px 16px;
+}
+
+.product-img {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: mandatory;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.product-img__item {
+  min-width: 163px;
+  height: 217px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  background-size: cover;
+}
+
+.product-img__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#product-img {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  bottom: 16px;
+  left: 16px;
+}
+
+.product-img__name {
+  font-size: var(--text-md);
+  text-overflow: clip;
+}
+
+.product-header__text p {
+  font-size: var(--text-sm);
+  margin-bottom: 4px;
+}
+
+.product-header__text h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.product-header__btn {
+  font-size: var(--text-xs);
+  padding: 12px 16px;
+  background: var(--accent-color);
+  border-radius: 12px;
+}
+
+.product-img-container {
+  position: relative;
+  height: 256px;
+  /* margin: 24px 0 32px 0; */
+}
+
+.product-nav {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.product-nav__btn {
+  background: var(--accent-color);
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-header {
+    padding: 80px 0px 48px 0px;
+    max-width: 1156px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .product-header__text p {
+    font-size: var(--text-lg);
+    margin-bottom: 8px;
+  }
+
+  .product-header__text h2 {
+    font-size: 4.8rem;
+  }
+
+  .product-header__btn {
+    font-size: var(--text-md);
+    padding: 14px 36px;
+  }
+
+  .product-img-container {
+    height: auto;
+  }
+
+  .product-img {
+    height: 400px;
+    margin-bottom: 40px;
+    background: orange;
+  }
+
+  .product-nav {
+    position: relative;
+    bottom: 0;
+    transform: translateY(0%);
+    gap: 36px;
+    max-width: 1156px;
+    margin: 0 auto;
+    padding-bottom: 56px;
+    justify-content: end;
+  }
+}
+
+/* deals section */
+.deals-section {
+  background: #fcfafa;
+}
+
+.deals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary-color);
+  max-width: 1156px;
+  margin: 0 auto;
+  padding: 32px 35px;
+}
+
+.deals__text {
+  font-size: var(--text-sm);
+}
+
+.deals__title {
+  margin: 4px 0 24px 0;
+  font-size: 1.8rem;
+  line-height: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.deals__input {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.deals__input input,
+.deals__input div {
+  padding: 16px;
+}
+
+.deals__input input {
+  background: #fff;
+  font-size: var(--text-xs);
+  border: 0;
+}
+
+.deals__input div {
+  background: var(--accent-color);
+}
+
+@media only screen and (min-width: 768px) {
+  .deals {
+    align-items: start;
+    padding: 80px 0;
+  }
+
+  .deals__text {
+    font-size: var(--text-lg);
+  }
+
+  .deals__title {
+    margin: 42px 0;
+    line-height: 77.45px;
+    font-size: 6.4rem;
+    text-align: left;
+  }
+
+  .deals__input input {
+    padding: 22px 36px;
+    font-size: var(--text-lg);
+  }
+
+  .deals__input div {
+    padding: 28px;
+  }
+  .deals__input div img {
+    width: 24px;
+  }
+}
+
+/* footer section */
+
+.footer {
+  max-width: 1240px;
+  padding: 35.89px 16px 83px 16px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.footer-logo img {
+  width: 90.92px;
+}
+
+.footer-logo p {
+  font-size: var(--text-xs);
+  line-height: 24px;
+  color: #303030;
+}
+
+.copyright {
+  display: none;
+}
+
+.list-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 107px;
+  row-gap: 25px;
+}
+
+.item-footer h3 {
+  font-weight: 500;
+  margin-bottom: 25px;
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+.item-footer ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.item-footer ul li {
+  font-size: var(--text-xs);
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 80px 0px 93px 0px;
+    flex-direction: row;
+    gap: 0px;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+    max-width: 504px;
+  }
+
+  .footer-logo img {
+    width: 97.26px;
+  }
+
+  .footer-logo p {
+    font-size: var(--text-md);
+  }
+
+  .copyright {
+    display: block;
+    font-size: var(--text-md);
+    margin-top: auto;
+  }
+
+  .list-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 52px;
+    row-gap: 0px;
+  }
+
+  .item-footer h3 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .item-footer ul {
+    align-items: start;
+  }
+
+  .item-footer ul li {
+    font-size: var(--text-md);
+  }
+}
